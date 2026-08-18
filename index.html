@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Walcom HALO Recommender</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; max-width: 1000px; }
+    pre { background: #f6f6f6; padding: 12px; border-radius: 8px; overflow:auto; }
+    label { display:inline-block; min-width: 170px; }
+    input, select { padding: 6px 8px; }
+    button { padding: 8px 14px; cursor: pointer; }
+    hr { margin: 22px 0; }
+  </style>
+</head>
+<body>
+  <h2>Walcom HALO Recommender</h2>
+
+  <form id="recForm">
+    <div style="margin-bottom:10px;">
+      <label>Competitor name:</label>
+      <input id="competitorName" type="text" placeholder="e.g., Competitor X HALO 123" />
+    </div>
+
+    <div style="margin-bottom:10px;">
+      <label>HALO family:</label>
+      <select id="haloFamily" required>
+        <option value="">Select…</option>
+        <option value="EGO_CARBONIO_190">EGO CARBONIO 190 HALO</option>
+        <option value="SLIM_KOMBAT">SLIM KOMBAT HALO</option>
+        <option value="SLIM_XLIGHT">SLIM XLIGHT HALO</option>
+      </select>
+    </div>
+
+    <div style="margin-bottom:10px;">
+      <label>Digital / Analogue:</label>
+      <select id="digitalLevel" required>
+        <option value="NON_DIGITAL">Analogue</option>
+        <option value="DIGITAL">Digital</option>
+        <option value="DIGITAL_PRO">Digital Pro</option>
+      </select>
+    </div>
+
+    <div style="margin-bottom:10px;">
+      <label>Variant group:</label>
+      <select id="baseClear" required>
+        <option value="BASE">Base</option>
+        <option value="CLEAR">Clear</option>
+      </select>
+    </div>
+
+    <div style="margin-bottom:10px;">
+      <label>Requested tip size:</label>
+      <input id="needleSize" type="number" step="0.1" placeholder="e.g., 1.4" required />
+    </div>
+
+    <button type="submit">Recommend</button>
+  </form>
+
+  <hr />
+
+  <h3>✅ Add-on recommendation</h3>
+  <pre id="addonOut">Run a recommendation…</pre>
+
+  <h3>✅ HALO recommendations</h3>
+  <pre id="haloOut">Run a recommendation…</pre>
+
+  <script type="module" src="/src/app.js"></script>
+</body>
+</html>
